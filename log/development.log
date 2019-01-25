@@ -40,3 +40,65 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "My Title"], ["description", "Hello World what's up y'all!"], ["created_at", "2019-01-25 15:40:26.345127"], ["updated_at", "2019-01-25 15:40:26.345127"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/posts/new" for ::1 at 2019-01-25 10:46:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 354ms (Views: 341.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for ::1 at 2019-01-25 10:46:18 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jv9KXj4xFYzJVpcgT9HPcgAFnszeUgxl3qsm+aS49cxgOq9xe2Bnyo84DypDSvG+Vgqe6yo3ZX6BnX8nrRpglg==", "title"=>"Super Fast Cars", "description"=>"Vrooom..", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Super Fast Cars"], ["description", "Vrooom.."], ["created_at", "2019-01-25 15:46:18.118333"], ["updated_at", "2019-01-25 15:46:18.118333"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 17ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/posts" for ::1 at 2019-01-25 10:46:18 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for ::1 at 2019-01-25 10:47:07 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jv9KXj4xFYzJVpcgT9HPcgAFnszeUgxl3qsm+aS49cxgOq9xe2Bnyo84DypDSvG+Vgqe6yo3ZX6BnX8nrRpglg==", "title"=>"Warriors Arise", "description"=>"Wake up my warriors!", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Warriors Arise"], ["description", "Wake up my warriors!"], ["created_at", "2019-01-25 15:47:07.206465"], ["updated_at", "2019-01-25 15:47:07.206465"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts.4
+Completed 302 Found in 8ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/posts.4" for ::1 at 2019-01-25 10:47:07 -0500
+Processing by PostsController#index as 
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2019-01-25 10:48:03 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jv9KXj4xFYzJVpcgT9HPcgAFnszeUgxl3qsm+aS49cxgOq9xe2Bnyo84DypDSvG+Vgqe6yo3ZX6BnX8nrRpglg==", "title"=>"Yay!!! It's Taco Breakfast", "description"=>"Who doesn't love a taco!", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Yay!!! It's Taco Breakfast"], ["description", "Who doesn't love a taco!"], ["created_at", "2019-01-25 15:48:03.199987"], ["updated_at", "2019-01-25 15:48:03.199987"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 7ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/posts/5" for ::1 at 2019-01-25 10:48:03 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 58ms (Views: 12.0ms | ActiveRecord: 0.1ms)
